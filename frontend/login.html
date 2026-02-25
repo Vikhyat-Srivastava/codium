@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SmartSociety</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .role-toggle button.active {
+      background: linear-gradient(135deg, var(--accent2), #6d28d9);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="logo-mark">S</div>
+    <h2>SmartSociety</h2>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="societies.html">Societies</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="login.html" class="active">Login</a>
+  </div>
+</nav>
+
+<!-- FORM PAGE -->
+<div class="form-page">
+  <div class="form-box">
+
+    <div class="form-logo">
+      <div class="logo-mark">S</div>
+      <div class="form-title">Welcome Back</div>
+      <div class="form-subtitle">Sign in to your SmartSociety account</div>
+    </div>
+
+    <!-- Role Toggle -->
+    <div class="role-toggle">
+      <button class="active">🎓 Student</button>
+      <button>🛠 Admin</button>
+    </div>
+
+    <!-- Form Fields -->
+    <div class="form-group">
+      <label>Username or Email</label>
+      <input type="email" placeholder="you@university.edu">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password">
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 22px; font-size:13px;">
+      <label style="display:flex; gap:8px; align-items:center; cursor:pointer; color:var(--muted2);">
+        <input type="checkbox" style="width:auto; margin:0; accent-color:var(--accent);">
+        Remember me
+      </label>
+      <a href="#" style="color:var(--accent); text-decoration:none;">Forgot password?</a>
+    </div>
+
+    <button class="btn btn-primary" style="width:100%; justify-content:center;">Login →</button>
+
+    <div class="form-footer-link" style="margin-top: 24px;">
+      New to SmartSociety? <a href="#">Request access</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">SmartSociety</div>
+  <div class="footer-copy">© 2026 Smart Society Discovery Platform</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="societies.html">Societies</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

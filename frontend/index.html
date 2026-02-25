@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSociety — Campus Discovery Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="logo-mark">S</div>
+    <h2>SmartSociety</h2>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="societies.html">Societies</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="login.html" class="btn-nav">Login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🎓 Campus Life, Reimagined</div>
+
+  <h1>Discover Your<br><span class="grad">Campus Vibe</span></h1>
+
+  <p>An intelligent platform connecting students with societies, events, and opportunities — powered by your interests.</p>
+
+  <div class="hero-cta">
+    <a href="societies.html" class="btn btn-primary">Explore Societies →</a>
+    <a href="login.html" class="btn btn-secondary">Get Started Free</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="num">8<span>+</span></div>
+      <div class="label">Societies</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">500<span>+</span></div>
+      <div class="label">Students</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">30<span>+</span></div>
+      <div class="label">Events/Year</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">1<span>campus</span></div>
+      <div class="label">Community</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="container" style="padding-top: 20px; padding-bottom: 80px;">
+  <div class="section-header section-divider" style="margin-bottom: 0;">
+    <div class="section-title">Why SmartSociety?</div>
+  </div>
+
+  <div class="grid" style="margin-top: 30px;">
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>Smart Discovery</h3>
+      <p>Browse and filter societies by category — tech, arts, sports and more — all in one place.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon purple">📢</div>
+      <h3>Live Announcements</h3>
+      <p>Stay updated with real-time announcements from every society you follow.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon pink">⚡</div>
+      <h3>Admin Dashboard</h3>
+      <p>Society heads can publish events, manage members and post updates instantly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED SOCIETIES PREVIEW -->
+<section class="container" style="padding-top: 0;">
+  <div class="section-header">
+    <div class="section-title">Featured Societies</div>
+    <a href="societies.html" class="section-sub" style="color: var(--accent); text-decoration: none; font-size: 13px;">View all →</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag tag-tech">Technical</span>
+      <h3>Nebula</h3>
+      <p>Innovation, emerging tech, and future-forward thinking.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-tech">Technical</span>
+      <h3>Binary Club</h3>
+      <p>Competitive coding, DSA challenges, and hackathons.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-art">Art & Culture</span>
+      <h3>Dance X</h3>
+      <p>Contemporary dance performances and workshops.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-tech">Technical</span>
+      <h3>IOTUINO</h3>
+      <p>IoT, Arduino builds, and hardware innovation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATION SECTION -->
+<section class="container" id="recommendations" style="padding-top: 0; padding-bottom: 100px;">
+
+  <!-- Logged-out state: prompt to login -->
+  <div id="rec-loggedout">
+    <div class="rec-hero-wrap">
+      <div class="rec-hero-badge">✨ Personalised For You</div>
+      <h2 class="rec-hero-title">Smart Society<br><span class="grad">Recommendations</span></h2>
+      <p class="rec-hero-sub">Tell us your interests, skills, and goals — we'll match you with the societies where you'll thrive.</p>
+
+      <div class="rec-features">
+        <div class="rec-feature-pill">🎯 Interest Matching</div>
+        <div class="rec-feature-pill">🛠 Skill-Based Scoring</div>
+        <div class="rec-feature-pill">👤 Role Alignment</div>
+      </div>
+
+      <a href="login.html" class="btn btn-primary" style="margin-top: 32px;">Login to Get Recommendations →</a>
+    </div>
+  </div>
+
+  <!-- Logged-in state: show recommendations -->
+  <div id="rec-loggedin" style="display:none;">
+
+    <div class="section-header" style="margin-bottom: 8px;">
+      <div class="section-title">✨ Your Recommendations</div>
+      <button class="btn btn-ghost" id="rec-edit-profile" style="font-size: 13px; padding: 8px 16px;">✏️ Edit Profile</button>
+    </div>
+    <p style="color: var(--muted); font-size: 14px; margin-bottom: 32px;" id="rec-profile-summary"></p>
+
+    <!-- Society cards grid -->
+    <div id="rec-grid" class="rec-grid"></div>
+
+    <!-- No profile fallback -->
+    <div id="rec-no-profile" style="display:none; text-align:center; padding: 60px 0;">
+      <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
+      <h3 style="font-family:'Syne',sans-serif; font-size:20px; margin-bottom:10px;">Complete your profile to get matched</h3>
+      <p style="color:var(--muted); font-size:14px; margin-bottom:24px;">Tell us your interests, skills, and role preferences.</p>
+      <button class="btn btn-primary" id="rec-setup-profile">Set Up My Profile →</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">SmartSociety</div>
+  <div class="footer-copy">© 2026 Smart Society Discovery Platform</div>
+  <div class="footer-links">
+    <a href="societies.html">Societies</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="login.html">Login</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/index.js"></script>
+<script src="js/recommend.js"></script>
+</body>
+</html>
